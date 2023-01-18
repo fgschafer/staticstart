@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title></title>
+
+   <!-- Icons & Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+   <!-- css -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="less.css" rel="stylesheet">
+
+   <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+</head>
+
+<body>
+   
+   <header id="site-header" x-data="{open: false}" @keydown.escape="open=false">
+      <div class="wrap">
+         <div class="logo">
+            <a href="/"><img src="./images/logo.png" alt="" class="img-fluid" /></a>
+         </div>
+         <div class="header-contents d-none d-lg-block">
+            <ul class="main-menu not-responsive">
+               <li><a href="">Inicio</a></li>
+               <li><a href="">Empresa</a></li>
+               <li><a href="">Servicios</a></li>
+               <li><a href="">Contacto</a></li>
+            <ul>
+         </div>
+         <button id="menu-open" class="menu-command d-block d-lg-none" @click="open=true">
+            <i class="bi bi-list"></i>
+         </button>
+      </div>
+      <div class="menu-responsive" x-cloak x-show="open" x-transition.duration.400ms @mousewheel.prevent>
+         <button id="menu-close" class="menu-command" @click="open=false"><i class="bi bi-x-circle"></i></button>
+         <a href="/" class="logo-responsive">
+            <img src="./images/logo.png" alt="" class="img-fluid" />   
+         </a>
+         <ul class="main-menu responsive">
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Empresa</a></li>
+            <li><a href="">Servicios</a></li>
+            <li><a href="">Contacto</a></li>
+         </ul>
+         <div class="menu-responsive-footer">
+            
+         </div>
+      </div>
+   </header>
+   <div class="main-content">
+     
+   </div>
+   <footer id="site-footer" class="pt bg-gray">
+      <div class="container container-expanded">
+         <div class="row row-footer pb iom">
+            <div class="col-12 col-md-6 col-lg-2 footer-col">
+               <div class="wrap">
+                  <a href="/" class="logo-footer"><img src="./images/logo.png" class="img-fluid" alt=""></a>
+               </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 footer-col">
+               <div class="wrap">
+                  <h4>Mapa del Sitio</h4>
+                  <ul class="footer-menu sitemap">
+                     <li><a href="">Inicio</a></li>
+               <li><a href="">Empresa</a></li>
+               <li><a href="">Servicios</a></li>
+               <li><a href="">Contacto</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 footer-col">
+               <div class="wrap">
+                  <h4>Servicios</h4>
+                  <ul class="footer-menu">
+                     <li><a href="">Item de menú 1</a></li>
+                     <li><a href="">Otro item</a></li>
+                     <li><a href="">Un link más</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 footer-col">
+               <div class="wrap">
+                  <h4>Datos de contacto</h4>
+                  <ul class="footer-menu">
+                     
+                  </ul>
+               </div>
+            </div>
+         </div>      
+         <div class="row copyright text-center">
+            <p class="mb-0"><small>&copy;2023 &bull; Nombre de la empresa &bull; Todos los Derechos Reservados</small></p>
+         </div>
+      </div>
+   </footer>
+   
+   <div class="back-to-top" x-data="{atTop:true}" @scroll.window="atTop = (window.pageYOffset > 500) ? false : true" x-show="!atTop" x-transition.duration.500ms @click="window.scrollTo(0, 0)">
+      <button>
+         <i class="bi bi-arrow-up-short"></i>
+      </button>
+   </div>
+
+   <script src="js/jquery.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
